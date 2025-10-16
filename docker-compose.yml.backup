@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  app:
+    image: gregdev0x/near-mpc-oracle:latest
+    container_name: app
+    volumes:
+      - /var/run/tappd.sock:/var/run/tappd.sock
+    environment:
+      - ETHEREUM_SEPOLIA_RPC=${ETHEREUM_SEPOLIA_RPC}
+      - BASE_SEPOLIA_RPC=${BASE_SEPOLIA_RPC}
+      - ARBITRUM_SEPOLIA_RPC=${ARBITRUM_SEPOLIA_RPC}
+      - OPTIMISM_SEPOLIA_RPC=${OPTIMISM_SEPOLIA_RPC}
+      - ORACLE_API_KEY=${ORACLE_API_KEY}
+      - NEAR_RPC_URL=${NEAR_RPC_URL}
+      - NEAR_ACCOUNT_ID=${NEAR_ACCOUNT_ID}
+      - NEAR_PRIVATE_KEY=${NEAR_PRIVATE_KEY}
+    restart: always

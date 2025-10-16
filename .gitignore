@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.local
+phala.env
+*.log
+.DS_Store
+*.wasm
+.env.deployment
+.env.deployment.example
+
+# Archived debugging scripts
+.archived-scripts/
