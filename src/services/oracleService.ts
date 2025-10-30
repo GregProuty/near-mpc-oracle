@@ -63,6 +63,11 @@ export class OracleService {
       // 4. Aggregate total aTokens
       const aggregated = aggregateBalances(chainBalances, vaultBalances);
       logger.info(`Total aTokens across chains: ${aggregated.totalATokens}`);
+      
+      // 🧪 TEMPORARY: Fake a cross-chain balance for testing depositWithSignature
+      // TODO: Remove this once real cross-chain deposits exist
+      const FAKE_CROSS_CHAIN_BALANCE = "1000000"; // 1 USDC for testing
+      logger.warn(`⚠️  TESTING MODE: Overriding balance with fake value: ${FAKE_CROSS_CHAIN_BALANCE}`);
 
       // 5. Get nonce from vault
       logger.info(`Step 3: Getting nonce from vault on chain ${vaultChainId}...`);
@@ -80,7 +85,7 @@ export class OracleService {
 
       // 6. Create snapshot
       const snapshot: CrossChainBalanceSnapshot = {
-        balance: aggregated.totalATokens,
+        balance: FAKE_CROSS_CHAIN_BALANCE, // 🧪 TEMP: Using fake balance for testing
         nonce: nonce.toString(),
         deadline: deadline.toString(),
         assets,

@@ -13,8 +13,8 @@ export const SUPPORTED_CHAINS: Record<string, ChainConfig> = {
     name: 'Base Sepolia',
     rpcUrl: process.env.BASE_SEPOLIA_RPC || 'https://sepolia.base.org',
     aavePoolAddress: '0x6a9d64f93db660eacb2b6e9424792c630cda87d8',
-    usdcAddress: '0x036CbD53842c5426634e7929541eC2318f3dCF7e',
-    vaultAddress: process.env.BASE_VAULT_ADDRESS || '0xB57D1241fb45B83E10039e9c2EaaB348628f2e03',
+    usdcAddress: '0x036CbD53842c5426634e7929541eC2318f3dCF7e', // Circle's official USDC on Base Sepolia testnet
+    vaultAddress: process.env.BASE_VAULT_ADDRESS || '0x773035EABdA16B5416B26E12156483C6B6F56451', // AaveVault (CORRECT AI_AGENT)
   },
   arbitrumSepolia: {
     chainId: 421614,
@@ -22,7 +22,7 @@ export const SUPPORTED_CHAINS: Record<string, ChainConfig> = {
     rpcUrl: process.env.ARBITRUM_SEPOLIA_RPC || 'https://sepolia-rollup.arbitrum.io/rpc',
     aavePoolAddress: '0xBfC91D59fdAA134A4ED45f7B584cAf96D7792Eff',
     usdcAddress: '0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d',
-    vaultAddress: process.env.ARBITRUM_VAULT_ADDRESS || '0xd8a3fec99a7ed4ead5effb00c3017603cdca03c9',
+    vaultAddress: process.env.ARBITRUM_VAULT_ADDRESS || '0xB5412604ea7E3EeC4043Bd8F1BE1D3aA357A6185', // AaveVault (CORRECT AI_AGENT)
   },
   optimismSepolia: {
     chainId: 11155420,

@@ -63,3 +63,5 @@ echo "   curl -H 'Authorization: Bearer API_KEY' https://your-cvm-url/api/oracle
 echo ""
 echo "Done!"
 
+
+
