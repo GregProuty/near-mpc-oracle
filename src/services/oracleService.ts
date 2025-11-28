@@ -1,6 +1,7 @@
 import { ethers } from 'ethers';
 import { logger } from '../utils/logger';
-import { getNearMpc, CrossChainBalanceSnapshot } from './nearMpcService';
+import { getNearContract } from './nearContractService';
+import { CrossChainBalanceSnapshot } from './nearMpcService';
 import { fetchChainBalances, fetchVaultBalances, aggregateBalances } from './balanceFetcher';
 import { getVaultNonce } from './vaultService';
 import { getChainById } from '../config/chains';
@@ -32,7 +33,7 @@ export interface PoolValueResponse {
  * Oracle Service - Coordinates balance fetching and NEAR MPC signing
  */
 export class OracleService {
-  private nearMpc = getNearMpc();
+  private nearMpc = getNearContract();
 
   /**
    * Generate a signed balance snapshot for deposit

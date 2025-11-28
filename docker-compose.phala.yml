@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   oracle:
-    image: docker.io/gregdev0x/near-mpc-oracle:latest
+    image: docker.io/gregdev0x/near-mpc-oracle:v5.0-new-contract
     ports:
       - "3001:3001"
     env_file:
